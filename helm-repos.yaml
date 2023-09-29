@@ -1,0 +1,21 @@
+apiVersion: ""
+generated: "0001-01-01T00:00:00Z"
+repositories:
+# - caFile: ""
+#   certFile: ""
+#   insecure_skip_tls_verify: false
+#   keyFile: ""
+#   name: druid
+#   pass_credentials_all: false
+#   password: ""
+#   url: https://github.com/apache/druid/helm/druid
+#   username: ""
+- caFile: ""
+  certFile: ""
+  insecure_skip_tls_verify: false
+  keyFile: ""
+  name: bitnami
+  pass_credentials_all: false
+  password: ""
+  url: https://charts.bitnami.com/bitnami
+  username: ""
