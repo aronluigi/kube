@@ -1,0 +1,18 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: flink-ui-ingress
+  namespace: flink
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: flink.local
+    http:
+      paths:
+        - pathType: Prefix
+          path: /
+          backend:
+            service:
+              name: flink-jobmanager
+              port:
+                number: 8081
