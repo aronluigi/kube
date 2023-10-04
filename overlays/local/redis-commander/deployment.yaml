@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: redis
+  name: redis-commander
+spec:
+  selector:
+    matchLabels:
+      app: redis-commander
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: redis-commander
+    spec:
+      containers:
+      - name: redis-commander
+        image: ghcr.io/joeferner/redis-commander:latest
+        imagePullPolicy: Always
+        resources:
+          requests:
+            cpu: 100m
+            memory: 256Mi
+          limits:
+            cpu: 100m
+            memory: 512Mi
+        env:
+        - name: REDIS_HOST
+          value: redis-master.redis.svc
+        - name: REDIS_PORT
+          value: "6379"
+        - name: REDIS_PASSWORD
+          value: "password"
+        ports:
+          - name: http
+            containerPort: 8081

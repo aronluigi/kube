@@ -1,0 +1,16 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: redis
+
+resources:
+- ./namespace.yaml
+
+helmCharts:
+  - name: redis
+    releaseName: redis
+    namespace: redis
+    version: 18.1.2
+    repo: https://charts.bitnami.com/bitnami
+    valuesInline:
+      auth:
+        password: "password"

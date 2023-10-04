@@ -7,4 +7,6 @@ resources:
 - ./dnsutils.yaml
 - ./kafka-ui/
 - ./flink-ui/
+- ./redis-commander/
+- ./schema-registry/
 # - ./k8s-dashboard/

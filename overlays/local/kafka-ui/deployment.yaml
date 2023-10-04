@@ -28,7 +28,9 @@ spec:
         - name: KAFKA_CLUSTERS_0_NAME
           value: "Local Kafka"
         - name: KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS
-          value: kafka.kafka.svc.cluster.local:9092
+          value: kafka.kafka.svc:9092
+        - name: KAFKA_CLUSTERS_0_SCHEMAREGISTRY
+          value: http://schema-registry.schema-registry.svc:8081
         ports:
           - name: http
             containerPort: 8080
