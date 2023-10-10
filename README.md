@@ -15,7 +15,9 @@ Add the required hosts to your hostfile:
 sudo vim /etc/hosts
 # Add
 127.0.0.1 kafka.local flink.local zookeepre.local redis.local schema-registry.local
+127.0.0.1 airbyte.local
 ```
+
 ### Links
 [ArtifactHUB](https://artifacthub.io)
 

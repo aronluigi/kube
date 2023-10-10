@@ -1,0 +1,18 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: airbyte-ui-ingress
+  namespace: airbyte
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: airbyte.local
+    http:
+      paths:
+        - pathType: Prefix
+          path: /
+          backend:
+            service:
+              name: airbyte-airbyte-webapp-svc
+              port:
+                number: 80
