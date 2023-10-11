@@ -3,12 +3,12 @@ kind: Kustomization
 
 resources:
 - ../../base/
-- ../../base/airbyte/
+# - ../../base/airbyte/
+# - ./airbyte/
 - ../../base/localstack/
 - ./dnsutils.yaml
 - ./kafka-ui/
 - ./flink-ui/
 - ./redis-commander/
 - ./schema-registry/
-- ./airbyte/
 # - ./k8s-dashboard/
