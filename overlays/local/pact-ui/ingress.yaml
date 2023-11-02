@@ -1,0 +1,18 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: pact-ui-ingress
+  namespace: pact
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: pact.local
+    http:
+      paths:
+        - pathType: Prefix
+          path: /
+          backend:
+            service:
+              name: pact-broker
+              port:
+                number: 80

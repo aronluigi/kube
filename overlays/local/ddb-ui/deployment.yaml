@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: localstack
+  name: ddb-ui
+spec:
+  selector:
+    matchLabels:
+      app: ddb-ui
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: ddb-ui
+    spec:
+      containers:
+      - name: ddb-ui
+        image: aaronshaf/dynamodb-admin:latest
+        imagePullPolicy: Always
+        resources:
+          requests:
+            cpu: 100m
+            memory: 256Mi
+          limits:
+            cpu: 100m
+            memory: 1024Mi
+        env:
+        - name: DYNAMO_ENDPOINT
+          value: http://localstack.localstack.svc:4566
+        - name: AWS_REGION
+          value: eu-central-1
+        ports:
+          - name: http
+            containerPort: 8001

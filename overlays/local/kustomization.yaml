@@ -12,3 +12,6 @@ resources:
 - ./redis-commander/
 - ./schema-registry/
 # - ./k8s-dashboard/
+- ./ddb-ui/
+- ../../base/pact/
+- ./pact-ui/
